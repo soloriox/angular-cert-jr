@@ -1,20 +1,15 @@
-import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
-import {MatExpansionModule} from '@angular/material/expansion';
+import {Component} from '@angular/core';
+import {RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import {MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [MatExpansionModule],
+  imports: [MatListModule, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class MenuComponent {
   
-  sideBarOpened:boolean = false;
-
-  toogleNav(){
-    this.sideBarOpened = !this.sideBarOpened;
-  }
 }

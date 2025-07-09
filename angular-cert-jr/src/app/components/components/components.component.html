@@ -1,4 +1,14 @@
 
 <div class="leftSpace">
-    <p>components works!</p>
+    <ul>
+        <li><h3>Two-way binding with form controls.</h3></li>
+    </ul>
+    <h6>Hello {{firstName}}</h6>
+    Update name: <input type="text" [(ngModel)]="firstName" />
+    
+    <ul>
+        <li><h3>Two-way binding between components.</h3></li>
+    </ul>
+
+    <app-child [(count)]="initialCount"></app-child>
 </div>

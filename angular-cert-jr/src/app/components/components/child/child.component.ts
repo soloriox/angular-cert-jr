@@ -1,4 +1,4 @@
-import { Component, model } from '@angular/core';
+import { Component, model, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -9,10 +9,19 @@ import { Component, model } from '@angular/core';
 })
 export class ChildComponent {
 
+  /* Data Binding two ways */  
   count = model<number>(0);
-
   updateCount(amount: number): void{
     this.count.update(currentCount => currentCount + amount);
+  }
+
+  /* Input & Output */
+  @Input() inheritedValue = "";
+  
+  @Output() nickNameEvent = new EventEmitter<string>();
+
+  addNickName(){
+    this.nickNameEvent.emit("El Cremas");
   }
 
 }

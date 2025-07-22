@@ -10,5 +10,20 @@
         <li><h3>Two-way binding between components.</h3></li>
     </ul>
 
+    <!-- Child compomponent -->
     <app-child [(count)]="initialCount"></app-child>
+
+    <ul>
+        <li><h3>&#64;Input Decorator.</h3></li>
+    </ul>
+    <!-- Child compomponent -->
+    <app-child inheritedValue="{{firstName}}"></app-child>
+
+    <ul>
+        <li><h3>&#64;Output Decorator.</h3></li>
+    </ul>
+    <!-- Child compomponent -->
+    <app-child inheritedValue="{{firstName}}" (nickNameEvent)="getNickName($event)"></app-child>
+    @if (nickName !== '') {<p>El Apodo de {{firstName}} es '{{nickName}}' }
+
 </div>

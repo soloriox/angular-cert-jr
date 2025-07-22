@@ -1,6 +1,14 @@
-<p>
-    This is another component which makes the math and the value is update directly on a property of the top component.
-</p>
-<button (click)="updateCount(-1)"> - </button>
-<span>{{ count() }}</span>
-<button (click)="updateCount(+1)"> + </button>
+
+@if (inheritedValue === "") {
+    <p>
+        This is another component which makes the math and the value is update directly on a property of the top component.
+    </p>
+    <button (click)="updateCount(-1)"> - </button>
+    <span>{{ count() }}</span>
+    <button (click)="updateCount(+1)"> + </button>
+} @else {
+    <p>
+        Inherited Value: {{inheritedValue}} 
+        <button (click)="addNickName()"> Add NickName </button>
+    </p>
+}

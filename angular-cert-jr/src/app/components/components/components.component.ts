@@ -13,4 +13,11 @@ export class ComponentsComponent {
 
   firstName = 'Abraham';
   initialCount = 18;
+  nickName = '';
+
+  /*Child Output subscription*/
+  getNickName(nickName: string){
+    this.nickName = nickName;
+  }
+
 }

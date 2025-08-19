@@ -1,0 +1,20 @@
+<div>
+    <h3>Template-Driven Form</h3>
+    <form (ngSubmit)="process()" id="templateForm" #templateForm="ngForm">
+        <label>Name: </label>
+        <input type="text" name="fullName" placeholder="Full name" 
+            [(ngModel)]="person.fullName" #fullName="ngModel" required /><br/>
+        <span [hidden]="fullName.pristine || fullName.valid"
+            class="warnig">Field 'Name' is mandatory.</span><br/><br/>
+
+        <label>Email: </label>
+        <input type="email" placeholder="email" name="email" 
+            [(ngModel)]="person.email" #email="ngModel" required /><br/>
+        <span [hidden]="email.pristine || email.valid"
+            class="warnig">Field 'Email' is mandatory.</span><br/>
+
+        <button type="submit" [disabled]="templateForm.invalid">
+            Enviar
+        </button>
+    </form>
+</div>

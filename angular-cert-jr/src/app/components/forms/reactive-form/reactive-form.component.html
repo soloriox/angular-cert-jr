@@ -1,0 +1,30 @@
+<div>
+    <h3>Reactive Form</h3>
+    <form [formGroup]="formUser" (ngSubmit)="process()">
+        <label>Name: </label>
+        <input type="text" name="fullName" placeholder="Full name" 
+            formControlName="fullName"/><br/>
+        <span [hidden]="fullName.pristine || fullName.valid"
+            class="warnig">Field 'Full Name' is mandatory.</span><br/>
+        
+        <label>Email: </label>
+        <input type="email" placeholder="email" name="email" 
+            formControlName="email" /><br/>
+        
+        <div [hidden]="email.pristine || email.valid">
+            @if (email.errors?.['required']) {
+                <span class="warnig">Field 'Email' is mandatory.</span><br/>
+            }
+            @if (email.errors?.['email']) {
+                <span class="warnig">Is not a valid email.</span><br/>
+            }
+        </div>
+        <p><br>
+            <button type="submit" [disabled]="formUser.invalid">
+                Enviar
+            </button>
+        </p>
+    </form>
+
+
+</div>
